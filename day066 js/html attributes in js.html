@@ -1,0 +1,37 @@
+<body>
+  <div class="container">
+    I am div tag.
+  </div>
+
+  <p id='pTag' data-intrest='coding' data-sth='smbody'>
+    <strong>
+      To make custom attribute we should(standrd) put prefix of "data-" before custom attribute
+      </strong>
+  </p>
+
+  <script>
+    const log = console.log.bind(document);
+    let ch = document.querySelector(".container");
+
+    //check weather the attribute is given or not
+    log(ch.hasAttribute("class")); //true
+    log(ch.hasAttribute("style")); //false
+    log(ch.hasAttribute("id")); //false
+
+    //get the value of the attribute
+    log(ch.getAttribute("class")); //container
+    log(ch.getAttribute("id")); //null
+
+    //setting the attribute and value
+    ch.setAttribute("onclick", "alert('hi')");
+    ch.setAttribute("contentEditable", "true");
+
+    // removing the attribute and value
+    ch.removeAttribute("class");
+    ch.removeAttribute("onclick");
+
+    //getting custom attributes.
+    log(pTag.dataset); //Dom string Map
+    log(pTag.dataset.intrest); //coding
+  </script>
+</body>

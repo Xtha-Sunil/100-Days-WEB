@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+	<style>
+		* {
+			margin: 0;
+			box-sizing: border-box;
+		}
+		#canvas {
+			background-color: cyan;
+			height: 900px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" style="height:900px; width:100%; background-color:cyan">Your device doesnt support canvas.</canvas>
+	<script>
+		window.onload = function() {
+			let canvas = document.querySelector("#canvas");
+
+			//To access the drawing functions, define a context of a 2d canvas.
+			context = canvas.getContext("2d");
+
+			//code from here
+			context.moveTo(10, 0);
+			context.lineTo(10, 800);
+
+
+			context.rect(30, 30, 100, 100);
+			context.rect(70, 10, 100, 100);
+
+			context.moveTo(30, 30);
+			context.lineTo(70, 10);
+
+			context.moveTo(130, 130);
+			context.lineTo(170, 110);
+
+			context.moveTo(30, 130);
+			context.lineTo(70, 110);
+
+			context.moveTo(130, 30);
+			context.lineTo(170, 10);
+
+			context.moveTo(190, 900)
+			context.lineTo(190, 0);
+			context.lineTo(270, 60);
+			context.lineTo(220, 90);
+			context.lineTo(290, 140);
+			context.lineTo(190, 140);
+			context.moveTo(225, 115)
+			context.arc(215, 115, 10, 0, 2*Math.PI);
+
+			context.moveTo(225, 50);
+			context.arc(215, 50, 10, 0, Math.PI);
+
+			context.stroke();
+		}
+	</script>
+</body>
+</html>

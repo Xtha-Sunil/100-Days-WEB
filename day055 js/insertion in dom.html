@@ -1,0 +1,24 @@
+<div id="hi">
+  I'm div tag
+</div>
+<script>
+  let hi = document.querySelector("#hi");
+  hi.insertAdjacentText("beforebegin", "<i> I'm beforebegin </i>");
+  hi.insertAdjacentHTML("beforeend", "<b> I'm beforeend </b>");
+  hi.insertAdjacentHTML("afterbegin", "<b> I'm afterbegin </b>");
+
+  let input = document.createElement("input");
+  hi.insertAdjacentElement("afterend", input);
+
+
+  /* output will be
+
+&lt;i&gt; I'm beforebegin &lt;/i&gt;
+<div id="hi">
+    <b> I'm afterbegin </b>
+    I'm div tag
+    <b> I'm beforeend </b>
+</div>
+<input>
+*/
+</script>

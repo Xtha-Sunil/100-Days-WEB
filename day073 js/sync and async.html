@@ -1,0 +1,26 @@
+<script>
+  console.log("start");
+  // prompt will stop further processing of code
+  //causing program to wait till user input
+  let a = prompt("what is your name");
+  console.log(a);
+  console.log("end");
+  //prompt is synchronic as it stop further processing
+
+
+  //setTimeout is async means it will execute after certain time
+  // but dont stop program flow
+  console.log("start");
+  setTimeout(()=> {
+    alert("hi");
+  }, 3000);
+  console.log("end");
+
+  //AS WE DONT KNOW WHEN WILL THE ASYNC CODE EXECUTE SO WE
+  //NEED TO GIVE THEM CALLBACK FUNCTION TO INDICATE
+  //EXECUTION OF ASYNC PROGRAM;
+  
+    //callback function are function passed as argument
+    //which are used to indicate completion of pervious process
+    // callback function are async.
+</script>

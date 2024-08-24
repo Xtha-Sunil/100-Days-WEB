@@ -1,0 +1,30 @@
+<script>
+  // all promise have same code with different delay
+  let p1 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      reject("P1 is now fulfilled");
+    }, 400);
+  })
+  let p2 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      resolve("P2 is now fulfilled");
+    }, 800);
+  });
+  let p3 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      reject(new Error("P3 is rejected"));
+    }, 1200);
+  })
+
+  let p4 = Promise.allSettled([p1, p2, p3]);
+  //gives array of object
+  p4.then(val=> {
+    console.log(val);
+  })
+
+  //returns only first to resolve/reject
+  let p5 = Promise.race([p1, p2, p3]);
+  p5.then(val=> {
+    console.log(val);
+  });
+</script>

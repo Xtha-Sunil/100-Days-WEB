@@ -1,0 +1,36 @@
+<script>
+  let p = new Promise((resolve, reject)=> {
+    setTimeout(function() {
+      resolve("P is resolved.");
+    }, 1000);
+  });
+
+  p.then((value)=> {
+    console.log(value);
+    let p2 = new Promise((resolve, reject)=> {
+      setTimeout(()=> {
+        reject("p2 is fulfuilled");
+      }, 1000)
+    })
+    return p2;
+  }).then((val)=> {
+    //this .then for line 8
+    console.log(val);
+    return new Promise((resolve, reject)=> {
+      let asd = parseInt(prompt("Enter odd number"));
+      if (asd%2 == 1)
+        resolve("Odd number");
+      else
+        reject(new Error("Not odd number"));
+    });
+  }).catch(err=> {
+    console.error(err)
+    return new Promise((resolve, reject)=> {
+      reject('122')
+    })
+  }).then(val=> {
+    console.log(val)
+  }).catch(err=> {
+    console.log(err);
+  });
+</script>

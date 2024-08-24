@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="c1 item" id="id1">
+    <span id="span"><i>Span</i></span>
+  </div>
+  <div class="c2 item" id="id2"></div>
+</div>
+
+<script>
+  const log = console.log.bind(document);
+
+  let id1 = document.querySelector("#id1");
+  let id2 = document.querySelector("#id1");
+  let item = document.querySelector(".item");
+  let span = document.querySelector("#span");
+
+  log(span.contains(id1)); //false
+  log(id1.contains(span)); //true
+  log(item.closest('.container')); //returns HTML dom Object having matching css selector from ancestor ((grand)parents only)
+  log(item.matches('#id2')); //false coz querySelector points first element only
+  log(item.matches('#id1')); //true
+
+  log(span.innerHTML);  // return everything inside the element
+  log(span.outerHTML); //returns innerHTML + itself
+
+</script>

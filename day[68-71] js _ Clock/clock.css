@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'digital';
+  src: url('digital.ttf');
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'digital';
+  color: white;
+  background-color: hsl(215.6,27%,18.8%);
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+nav {
+  height: 10vh;
+  background-color: rgb(63,63,63);
+  text-align: center;
+}
+.option {
+  flex-grow: 1;
+  border-left: 1px dashed red;
+}
+nav .active {
+  color: red;
+}
+.hidden {
+  display: none;
+}
+/* Clock:Digital */
+.clock {
+  height: 90px;
+  width: 200px;
+  background-color: #152030;
+  color: lightblue;
+  border: 1px dashed green;
+  border-radius: 15px;
+  font-size: 45px;
+  position: relative;
+}
+.info {
+  font-size: 15px;
+  color: gray;
+  position: absolute;
+}
+#date {
+  top: 10;
+  left: 40;
+}
+#day {
+  bottom: 10px;
+  right: 40;
+}
+
+/*Clock:Timer*/
+.project {
+  animation: turn_on .4s linear 1;
+}
+.timer {
+  height: 150px;
+  width: 200px;
+  border-radius: 10px;
+  transition: border-radius, 1s;
+  background-color: #152030;
+  justify-content: flex-start;
+  transition: border-radius, .8s;
+}
+.timer label {
+  display: block;
+  text-align: center;
+}
+input {
+  background-color: transparent;
+  font-family: 'digital';
+  text-align: center;
+  color: white;
+  border: none;
+  outline: none;
+}
+input::placeholder {
+  font-family: 'digital';
+  font-size: 18px;
+}
+.tWrapper2 {
+  font-size: 25px;
+  color: red;
+  width: 100%;
+}
+.tWrapper2 > * {
+  flex-grow: 1;
+}
+.timerOptions {
+  height: 50px;
+  width: 200px;
+  margin-top: 20px;
+}
+.timerOptions > * {
+  height: 30px;
+  width: 80px;
+  border: none;
+  border-radius: 20px;
+  font-family: 'digital';
+  background-color: hsl(192,86.5%,73.9%);
+  font-size: 18px;
+}
+/*stopwatch */
+.stopWatch {
+  font-size: 30px;
+  flex-direction: column;
+}
+#records {
+  height: 300px;
+  width: 300px;
+  overflow-y: scroll;
+}
+#records ol {
+  background-color: #152030;
+  color: gray;
+}
+
+
+.dual_clock {
+  width: 100%;
+  height: 90vh;
+}
+.dual_clock .player {
+  height: 50%;
+  flex-direction: column;
+}
+hr {
+  width: 80px;
+}
+.dual_clock button {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.dual_clock .player.turn {
+  background-image: linear-gradient(to top,cyan, lightblue);
+  color: red;
+}
+
+.dialog {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-color: #152030;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.dialog input {
+  border-bottom: 1px solid gray;
+  text-align: left;
+  margin: 10px;
+}
+.dualTimeSetter {
+  height: 50px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+#submit {
+  border: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  background-image: linear-gradient(to left,cyan,lightblue,tomato);
+  font-display: 'digital';
+}
+@keyframes turn_on {
+  0% {
+    transform: translateX(100px);
+    opacity: .2;
+  }
+}

@@ -1,0 +1,28 @@
+<script>
+  let p1 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      reject(new Error("p1 rejected"));
+    }, 400);
+  });
+  let p2 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      resolve("p2 is fulfilled");
+    }, 800);
+  });
+  let p3 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      reject(new Error("p3 rejected"));
+    }, 1000);
+  });
+
+  let p4 = Promise.any([p1, p2, p3]);
+  p4.then(val=> {
+    console.log(val);
+  });
+
+  //returns resolved promise
+  console.log(Promise.resolve("hi"));
+
+  //returns rejected promise
+  Promise.reject("rejected")
+</script>

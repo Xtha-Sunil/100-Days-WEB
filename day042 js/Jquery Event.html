@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Events.html</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div>
+		Click me
+	</div>
+	<a href="www.sunil.com">Visit Me </a>
+
+	<script>
+		$(function() {
+			//ADD EL
+			$("div").click(function () {
+				alert("Clicked! the btn");
+			});
+
+			//on method to add EL
+			$("div").on("dblclick", function() {
+				alert("double clicked");
+			});
+			//to activate on own will
+			//only applicable for Jquey event
+			$("div").trigger("click");
+
+			//stop default setting
+			$("a").on("click", function(e) {
+				alert("Link clicked but not redirect");
+				e.preventDefault();
+			});
+		});
+	</script>
+</body>
+</html>

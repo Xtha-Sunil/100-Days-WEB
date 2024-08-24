@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Siblings and Parents</title>
+</head>
+<body>
+  <div>
+    DIV1
+  </div>
+  <div>
+    DIV2
+  </div>
+
+  <script>
+    const log = console.log.bind(document);
+
+    let body = document.body;
+    let fChild = body.firstChild; //depends on format as it count text node also;
+    let div = fChild.nextSibling;
+
+    let xyz = document.firstElementChild; //only element doesnt count text node, comment node etc;
+    log(fChild); //text node
+    log(div); //DIV1
+    log(div.nextSibling); //DIV2
+    log(div.parentNode.localName); //body
+    log(div.parentNode); // HTML body element
+    log(document.documentElement.parentElement); //null
+    log(document.documentElement.parentNode); //html element
+  </script>
+</body>
+</html>

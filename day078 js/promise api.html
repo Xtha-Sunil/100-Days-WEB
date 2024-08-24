@@ -1,0 +1,33 @@
+<script>
+  // promise.all
+  // useful when we dont know how much time it will take to resolve
+  let p1 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      resolve("P1 is now fulfilled");
+    }, 400);
+  })
+  let p2 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      resolve("P2 is now fulfilled");
+    }, 800);
+  });
+  let p3 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      resolve("P3 is now fulfilled");
+    }, 1200);
+  })
+
+  //this will be tajen as resolved promise
+  p4 = 'hi'
+
+  //it cant be called by index
+  let pAll = Promise.all([p1, p2, p3, p4]);
+  // will be executed iff all promise are resolved
+  pAll.then(value=> {
+    console.log(value);
+  });
+  //will be executed if any one of promise is rejected
+  pAll.catch(error=> {
+    console.log(error);
+  });
+</script>

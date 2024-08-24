@@ -1,0 +1,34 @@
+<script>
+  //promises are 'promise of code execution'
+  //promise will notify user either code execute or fail
+  let num = parseInt(prompt("any num"));
+  let p = new Promise(function(resolve, reject) {
+    if (num%2 == 0)
+      resolve('even');
+    else
+      reject(new Error('I am error'));
+  })
+  // To get value .then is used
+  // promise.then((value)=>{}, (error)=>{})
+  p.then((res)=> {
+    console.log(`${num} is even number.`);
+  }, (err)=> {
+    console.log(err);
+  })
+  //To catch error .catch is used
+  p.catch(()=> {
+    console.log(`${num} is odd number.`);
+  })
+  //Promise are used for parallel processing;
+  let p1 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      console.log("I am fulfilled. P1");
+    }, 2000)
+  })
+  let p2 = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+      console.log("I am fulfilled. P2");
+    }, 2000);
+  })
+  //bOth will execute after 2sec not take 4sec
+</script>

@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	text-align: center;
+}
+.row {
+	display: flex;
+}
+.item1 {
+	background-color: chocolate;
+}
+.item2 {
+	background-color: #ffb355;
+}
+.item1, .item2 {
+	flex-grow: 1;
+	margin: 3px;
+	border-radius: 5px;
+}

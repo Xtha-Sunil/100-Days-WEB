@@ -1,0 +1,32 @@
+<title> Insertion in DOM</title>
+<body>
+  outside of container : top
+  <div class="container">
+    start of container
+    <div>
+      Nothing
+    </div>
+    end of container
+  </div>
+  outside of container : bottom
+</div>
+
+<script>
+  let cont = document.querySelector(".container");
+
+  let para = document.createElement("para");
+  para.innerHTML = '<br> <i><b>Namaste Nepal</b></i> <br>';
+  
+  //append is different than appendChild
+  
+  //cont.append(para, "textNode", "another one");
+  //cont.appendChild(para); //add inside of element but at end
+
+  //cont.prepend(para); //add at beginning inside the element
+
+  //cont.before(para); //add just before and outside
+  //cont.after(para); //add just after and outside
+
+  //cont.firstElementChild.replaceWith(para); //replaces
+</script>
+</body>

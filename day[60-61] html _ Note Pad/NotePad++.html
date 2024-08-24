@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NotePad++</title>
+  <!-- Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- Icon -->
+  <script src="https://kit.fontawesome.com/c939d0e917.js" crossorigin="anonymous"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="text-center container">
+  <h1 class="banner p-3 text-primary">NotePad++</h1>
+  <button class="btn btn-light" onclick="change(this,'bold')">
+    <b>B</b>
+  </button>
+
+  <button class="btn btn-light" onclick="change(this,'italic')">
+    <i>I</i>
+  </button>
+
+  <button class="btn btn-light" onclick="change(this,'underline')">
+    <u>U</u>
+  </button>
+
+  <button id="left-align" class="align btn btn-light" onclick="alignText(this,'left')">
+    <i class="fas fa-align-left"></i>
+  </button>
+
+  <button id="center-align" class="align btn btn-light" onclick="alignText(this,'center')">
+    <i class="fas fa-align-center"></i>
+  </button>
+
+  <button id="right-align" class="align btn btn-light" onclick="alignText(this,'right')">
+    <i class="fas fa-align-right"></i>
+  </button>
+  <hr>
+  <textarea class="form-control" id="inp" placeholder="Enter text here..."></textarea>
+
+  <button class="btn btn-secondary mt-2" onclick='copy(this)'>Copy</button>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript DOM Example</title>
+</head>
+<body>
+
+	<div id="parent-element">
+		<p>Child Element 1</p>
+		<p>Child Element 2</p>
+		<p>Child Element 3</p>
+	</div>
+
+	<ul>
+		<li>List Item 1</li>
+		<li>List Item 2</li>
+		<li>List Item 3</li>
+	</ul>
+
+	<a href="https://www.example.com">Example Link</a>
+
+	<img src="image-src.jpg" alt="Example Image">
+
+	<script>
+		// Accessing a child element
+		const parentElement = document.querySelector('#parent-element');
+		const childElement = parentElement.querySelector(':first-child');
+		console.log(childElement);
+
+		// Accessing the last element
+		const listItems = document.querySelectorAll('ul li');
+		const lastListItem = listItems[listItems.length - 1];
+		console.log(lastListItem);
+
+		// Accessing multiple elements
+		const exampleElements = document.querySelectorAll('.example');
+		console.log(exampleElements);
+
+		// Accessing attributes
+		const linkElement = document.querySelector('a');
+		const hrefAttribute = linkElement.getAttribute('href');
+		console.log(hrefAttribute);
+
+		// Modifying attributes
+		const imageElement = document.querySelector('img');
+		imageElement.setAttribute('src', 'new-image-src.jpg');
+	</script>
+
+</body>
+</html>

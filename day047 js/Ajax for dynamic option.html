@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Sunil Enterprises</title>
+</head>
+<body>
+  <div>
+    <h2>Fill the form</h2>
+    <label for="name">Name:</label> <br>
+    <input type="text" id="name"> <br><br>
+
+    <label for="pass">Password:</label> <br>
+    <input type="text" id="pass"> <br><br>
+
+    <label for="item">What you want to buy:</label> <br>
+    <select onchange="brand(this.value)">
+      <option>Select the item...</option>
+      <option>Laptop</option>
+      <option>Mobile</option>
+      <option>Bike</option>
+    </select> <br><br>
+
+    <label for="brand">Brand:</label><br>
+    <select id="brand">
+      <option>Select the brand..</option>
+    </select>
+  </div>
+  <script>
+    function brand(data) {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "option.php?datavalue="+data, true);
+      xhr.send();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          document.querySelector("#brand").innerHTML = xhr.responseText;
+        }
+      } //onreadystatechange
+    } //function brand
+  </script>
+</body>
+</html>

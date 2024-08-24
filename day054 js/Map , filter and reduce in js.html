@@ -1,0 +1,33 @@
+<script>
+	const log = console.log.bind(document);
+	//	MAP method similar to forEach but it can return array
+	let arr1 = [1, 2, 3, 4, 5];
+	log( newarr1 = arr1.map((val, idx, arr)=> {
+		return val + 1;
+	})); // [2,3,4,5,6]
+
+	//FILTER method return new array after certain operation
+	let arr2 = [1, 2, 5, 8, 12, 17, 20];
+	log(newarr2 = arr2.filter((val)=> {
+		return val % 2 === 0;
+	})); // [2,8,12,20]
+
+	// REDUCE method runs function in each array element and
+	// reduce the array to single value
+	let arr3 = [1, 2, 3, 4, 5, 6];
+	log(sum = arr3.reduce((a, b)=> {
+		return a+b;
+	})); //21
+	let reduceFunc = (arg1, arg2) => {
+		return arg1 * arg2;
+	};
+	// reduce function can take initial value
+	let sevenFact = arr3.reduce(reduceFunc, 7);
+	log(sevenFact); //5040 == 7!
+
+	/* How it works
+if there is no second parameter then reduceFunc will take
+first and second Element of arr3 as arg1 and arg2 respectively
+But here it will take 7 as arg1 and reduce the arr3
+	*/
+</script>

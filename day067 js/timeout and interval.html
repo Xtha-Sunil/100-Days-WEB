@@ -1,0 +1,25 @@
+<script>
+  function product(a, b, c) {
+    alert("Hacking Initialized by Koder" + a*b*c);
+  }
+  //setTimeout(function, delay, [arg1,arg2,...]);
+  let id = setTimeout(product, 5000, 1, 23, 3);
+
+  //clear setTimeout
+  let a = prompt("Do you want to be hacked? y/n");
+  if (a == "n") {
+    clearTimeout(id);
+  }
+
+  // same with setInterval
+  function date() {
+    console.log(new Date().getSeconds());
+  }
+  let timer_id = setInterval(date, 1000); // can take arguments
+
+  function func() {
+    clearInterval(timer_id);
+    console.log("setInterval removed");
+  }
+  setTimeout(func, 5000)
+</script>

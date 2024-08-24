@@ -1,0 +1,16 @@
+#inp {
+  min-height: 200px;
+  max-width: 500px;
+}
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.underline {
+  text-decoration: underline;
+}
+.btn-secondary:hover {
+  transition: fade-out;
+    background-color: #00ff2f;}

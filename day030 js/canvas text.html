@@ -1,0 +1,27 @@
+<style>
+	#canvas {
+		width: 100%;
+		border: 1px solid black;
+	}
+</style>
+<canvas id="canvas" width="600" height="400">
+	Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+	window.onload = function() {
+		var canvas = document.getElementById("canvas");
+		var context = canvas.getContext("2d");
+
+		context.font = '75px Arial';
+		context.fillStyle = 'red';
+		context.fillText("Koder Dev", 120, 100);
+		context.fillText("+", 280, 150)
+		context.lineWidth = 3;
+		context.strokeStyle = "blue";
+		context.strokeText("Koder Dev", 120, 200);
+		context.strokeText("=", 280, 250);
+		context.strokeText("Koder Dev", 120, 300);
+		context.fillText("Koder Dev", 120, 300);
+	};
+</script>

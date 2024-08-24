@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Loader Practice</title>
+  <style>
+    * {
+      margin: 0;
+    }
+    .loader {
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body onload="loadFunc()">
+  <div class="loader">
+    <progress></progress>
+  </div>
+  <!-- Remove this comment to see effect
+    <video src="https://youtu.be/iVv"></video>
+    <video src="https://youtu.be/iV"></video>
+    <video src="https://youtu.be/iV"></video>
+    <video src="https://youtu.be/iVv"></video>
+    -->
+    <script>
+      function loadFunc() {
+        document.querySelector(".loader").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

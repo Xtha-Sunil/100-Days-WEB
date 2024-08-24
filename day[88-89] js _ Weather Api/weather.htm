@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="search flex">
+    <h1>Mausam</h1>
+    <form>
+      <input id="cityName" placeholder="Name of City" required>
+      <input type="submit" value="Search">
+    </form>
+  </div>
+
+  <div class="alertBox flex notActive">
+    <div class='load flex'>
+      .<br>
+      .<br>
+      .
+    </div>
+    <div class="okBtnDiv notActive">
+      Sorry no data found for <br> entered data.
+      <div>
+        <button onclick="okBtnClicked()">Ok</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class="abc notActive">
+      <div>
+        <table>
+          <caption>Location</caption>
+          <tr>
+            <th>City</th>
+            <td id="city"></td>
+          </tr>
+          <tr>
+            <th>Longitude</th>
+            <td id="lon"></td>
+          </tr>
+          <tr>
+            <th>Latitude</th>
+            <td id="lat"></td> </tr>
+          <tr>
+            <th>Country</th>
+            <td id="country"></td>
+          </tr>
+          <tr>
+            <th>Sunrise</th>
+            <td id="sunrise"></td>
+          </tr>
+          <tr>
+            <th>Sunset</th>
+            <td id="sunset"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div>
+        <table>
+          <caption>Weather</caption>
+          <tr>
+            <th></th>
+            <td id="lon"></td>
+          </tr>
+          <tr>
+            <th>Temperature</th>
+            <td id="temperature"></td>
+          </tr>
+          <tr>
+            <th>Visibility</th>
+            <td id="visibility"></td>
+          </tr>
+          <tr>
+            <th>Wind</th>
+            <td id="wind"></td>
+          </tr>
+          <tr>
+            <th>Pressure</th>
+            <td id="pressure"></td>
+          </tr>
+          <tr>
+            <th>Humidity</th>
+            <td id="humidity"></td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td id='description'></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+</body>
+</html>

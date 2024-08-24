@@ -1,0 +1,40 @@
+<!doctype HTML>
+<html>
+<head>
+	<title>Snake Game</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			margin: 0;
+		}
+		.canvas {
+			width: 100%;
+			height: 80vh;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		button {
+			width: 50px;
+			height: 30px;
+			background-color: cyan;
+			border: 1px solid black;
+			border-radius: 3px;
+			font-size: 24px;
+			margin: 5px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="gc" class="canvas" width="600" height="800"></canvas>
+
+	<div align="center">
+		<button class="up arr" onclick="Snake.action('up')">U</button> <br>
+		<button class="left arr" onclick="Snake.action('left')">L</button>
+		<button class="down arr" onclick="Snake.action('down')">D</button>
+		<button class="right arr" onclick="Snake.action('right')">R</button>
+	</div>
+	<script src="snake.js"></script>
+</body>
+</html>

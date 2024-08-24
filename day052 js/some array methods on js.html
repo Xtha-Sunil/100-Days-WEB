@@ -1,0 +1,48 @@
+<title>Array in JS</title>
+<script>
+  const log = console.log.bind(document);
+  //	const log = document.write.bind(document);
+  let arr = [1, 2, 3];
+
+  log(arr.toString()); // gives result seperated by comma
+  log(arr.join("-")); //gives string seperated by "-"(seperator)
+
+  log(arr.push(4)); // adds value at end and returns length of array
+  log("push " + arr);
+
+  log(arr.pop()); // removes last element and returns length of array
+  log("pop " + arr);
+
+  log(arr.shift()); // removes item at 0th idx and returns length
+  log("shift " + arr);
+
+  log(arr.unshift(0)); //add parameter at beginning
+  log("unshift " + arr);
+
+  arr = [1, 2, 3, 4, 5];
+  // sets the given parameter undefined but dont change length
+  let a = [,,,,,,,];
+  log(a.length); //7
+  delete arr[0];
+  log("before delete length = " + arr.length); // 5
+  log("delete " + arr);
+  log("after delete length = " + arr.length); // 5;
+
+  let ar2 = arr.concat(a); // makes new array
+  log("ar2 = "+ar2);
+
+
+  // new array
+  let arr = [1, 5, 12, 2];
+
+  /* make change in original value and sort according
+ to ascii value alphabetically */
+  log(arr.sort()); // [1,12,2,5]
+
+  let compare = (a, b) => {
+    return a-b;
+  }
+  let arr2 = [1, 5, 12, 2];
+  log(arr.sort(compare)); // [1,2,5,12]
+  log(arr.reverse()); //modify original array
+</script>

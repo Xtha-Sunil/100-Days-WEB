@@ -1,0 +1,21 @@
+<p id="load">
+  Here the text will be added. <br>
+</p>
+<button onclick="myFunc()">Try it yourself...</button>
+
+<script>
+  let load = document.getElementById("load");
+  function myFunc() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "fetch.html", true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200)
+          load.innerHTML += xhr.responseText;
+        else if (xhr.status == 404)
+          load.textContent = "Page not found";
+      }
+    }
+    xhr.send();
+  }
+</script>

@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>Table Navigation</title>
+  <style>
+    th, td {
+      padding: 10px;
+      border-bottom: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Sunil</td>
+          <td>Xtha</td>
+          <td>info@</td>
+        </tr>
+        <tr id="row3">
+          <th>2</th>
+          <td>Someone</td>
+          <td>Something</td>
+          <td>email@</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Noone</td>
+          <td>Nthg</td>
+          <td>gmail@</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    const log = console.log.bind(document);
+    let out = document.querySelector("#out");
+    let table = document.querySelector("table");
+
+    let tr = table.firstElementChild; // tr
+    log(table.firstElementChild.firstElementChild); // th
+    log(table.rows[0].cells[1]); //Sunil
+    log(table.tHead); // thead element of above table
+    log(table.tBodies); // tbody elem
+    log(table.tFoot); // null as in above table there is no tfoot
+
+    let row3 = document.querySelector("#row3");
+    log(sth = row3.nextElementSibling.cells[3]); //gmail@
+
+    log(row3.rowIndex, sth.cellIndex); // 2 3
+  </script>
+</body>
+</html>

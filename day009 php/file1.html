@@ -1,0 +1,15 @@
+<style>
+    h4{
+        color:red;
+   }
+</style>
+<h4>External file1 included</h4>
+
+<?php
+    echo "<h4>php in external file 1</h4>";
+    
+    echo "<br> file2 called </br>";
+    include "file2.html";
+    
+    echo "<h4>file 1 finished </h4>";    
+?>

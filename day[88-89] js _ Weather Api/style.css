@@ -1,0 +1,96 @@
+html ,body {
+  margin: 0;
+  box-sizing: border-box;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search {
+  flex-direction: column;
+  background: linear-gradient(to left top, cyan, blue);
+  height: 150px;
+}
+h1 {
+  color: gray;
+  font-variant: small-caps;
+}
+#cityName {
+  border: none;
+  border-bottom: 2px solid gray;
+  background-color: transparent;
+  text-align: center;
+  height: 20px;
+}
+#cityName:focus {
+  outline: none;
+}
+input[type="submit"] {
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(to right, cyan , black);
+  color: white;
+}
+.alertBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to right, black, cyan);
+  border-radius: 10px;
+  color: white;
+}
+.load {
+  height: 100px;
+  width: 100px;
+  border-top: 2px solid red;
+  border-radius: 50%;
+  animation: load 1s linear infinite;
+}
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.notActive {
+  display: none;
+}
+.okBtnDiv {
+  text-align: center;
+}
+.okBtnDiv div button {
+  background-color: green;
+  border: none;
+  height: 20px;
+  width: 50px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.info {
+  background-image: linear-gradient(to left top,#F6EA41,cyan);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 150px);
+}
+.info table {
+  margin-top: 20px;
+}
+.info table th ,
+.info table td {
+  text-align: left;
+}
+.info table caption {
+  color: gold;
+  font-weight: bold;
+  text-decoration: underline;
+}

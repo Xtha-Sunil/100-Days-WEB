@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery: Get and Set</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<div></div>
+	<br>
+	<button onclick="change()">Demo</button>
+
+	<script>
+		$(function() {
+			// changing css using jquery
+			$("div").css("background-color", "red");
+			$("div").width(100);
+			$("div").height(100);
+		});
+
+		function change() {
+			//setting attribute
+			$('div').attr('id', 'sunil');
+			//getting attribute
+			var id = $('div').attr('id');
+			//changing text
+			$('div').text("Sunil");
+		};
+	</script>
+</body>
+</html>

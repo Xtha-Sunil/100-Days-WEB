@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #152030;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#container {
+  height: auto;
+  width: 100%;
+}
+.bar {
+  display: inline-block;
+  margin-right: 2px;
+  background-color: blue;
+}
+#sort-btn {
+  background: black;
+  height: 20px;
+  color: white;
+  width: 60px;
+  border: none;
+  border-radius: 4px;
+  margin: 20px;
+}

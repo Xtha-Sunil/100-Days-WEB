@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My To-Do List</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <style>
+    h1 {
+      color: #1abc9c;
+    }
+    .rem {
+      margin-left: 5px;
+      background-color: white;
+      color: red;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>My To-Do List</h1>
+  <input type="text" placeholder="New item" />
+  <button id="add">Add</button>
+  <ol id="mylist"></ol>
+
+  <script>
+    $(function() {
+      $("#add").on("click", function() {
+        var val = $("input").val();
+        if (val !== '') {
+          var elem = $("<li></li>").html("<input type='checkbox' id='check'>"+val);
+          $(elem).append("<button class='rem'>X</button>");
+          $(elem).on("click", function() {
+            if ($('#check').is(":checked")) {
+              $(elem).html( < strike > " + val + " < /strike>");
+              } else {
+                $(elem).css("text-decoration", "none");
+              }
+            });
+
+            $("#mylist").append(elem);
+            $("input").val("");
+            $(".rem").on("click",
+              function() {
+                $(this).parent().remove();
+              });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

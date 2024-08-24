@@ -1,0 +1,32 @@
+<title> More dom operation</title>
+<body>
+  <!-- checking --><!-- cmt -->
+  <span> Span tag 1</span>
+  <span> Span tag 2</span>
+</body>
+
+<script>
+  const log = console.log.bind(document);
+
+  let bdy = document.body;
+  let span1 = document.querySelectorAll("span")[0];
+
+  //console.log(span1);
+  //console.dir(span1);
+  log(bdy.firstElementChild.nodeName); //span
+
+  //to get data inside nodes other than element type 'data' or 'nodeValue' is used
+  log(bdy.childNodes[1].data); //checking
+  log(bdy.childNodes[2].nodeValue); //cmt
+
+  //for doing so in element node innerHTML/TEXT is used
+  log(span1.nodeValue); //null
+  log(span1.textContent); //span tag 1
+  span1.nextElementSibling.hidden = true; //hide the span tag 2
+
+  //setting into DOM
+  span1.innerHTML = "<h2>Namaste Nepal</h2>"; //use HTML tag
+  span1.innerTEXT = "<b> Sunil </b>"; //dont use html
+  
+
+</script>

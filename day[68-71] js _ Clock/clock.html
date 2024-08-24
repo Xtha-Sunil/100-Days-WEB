@@ -1,0 +1,134 @@
+<html>
+<head>
+  <title>🍁Re. Sunil💮</title>
+  <link rel="stylesheet" href="clock.css">
+</head>
+<body onload="setDate()">
+  <audio id="aud" class="hidden" controls>
+    <source src="horse.ogg">
+  </audio>
+  <content class="flex" style="height:90vh">
+    <!--Clock-->
+    <div class="clock project flex">
+      <span class="info" id="date"></span>
+      <span id="hh"></span> :
+      <span id="mm"></span> :
+      <span id="ss"></span> &nbsp;
+      <span id="am_pm"></span>
+      <span class="info" id="day"></span>
+    </div>
+    <!--Clock End-->
+    <!--Timer-->
+    <div class="project hidden">
+      <p id="tHint">
+        Set the timer.
+      </p>
+      <div class="timer flex">
+        <div class="tWrapper1 flex">
+          <div style="width:50%">
+            <input placeholder="0" id="TW1H"><p></p>
+            <input placeholder="0" id="TW1M"><p></p>
+            <input placeholder="0" id="TW1S">
+          </div>
+          <div>
+            <label for="TW1H">Hour</label> <p></p>
+            <label for="TW1M">Minute</label><p></p>
+            <label for="TW1S">Second</label>
+          </div>
+        </div>
+        <!--tWrapper-->
+        <div class="tWrapper2 flex hidden">
+          <span id="TW2H"> H </span> :
+          <span id="TW2M"> M </span> :
+          <span id="TW2S"> S </span>
+        </div>
+      </div>
+      <!--timer-->
+      <div class="timerOptions">
+        <button id="opt1" onclick="setTimer(TW1H.value, TW1M.value, TW1S.value)">Start</button>
+        <button id="opt2" onclick="cancelTimer()" disabled>Cancel</button>
+      </div>
+    </div>
+    <!--Time End-->
+    <!--StopWatch-->
+    <div class="stopWatch project flex hidden">
+      <div class="display">
+        <span>0</span> :
+        <span>0</span> :
+        <span>0</span> :
+        <span>0</span>
+      </div>
+      <div id="records">
+        <ol id="ol"></ol>
+      </div>
+      <div class="stopwatchTimerOptions timerOptions">
+        <button onclick="startStopWatch()">Start</button>
+        <button onclick="stopStopWatch()" class="hidden">Stop</button>
+        <button onclick="lapStopWatch()" disabled>Lap</button>
+        <button onclick="resetStopWatch()" class="hidden">Reset</button>
+      </div>
+    </div>
+    <!--StopWatch End-->
+    <!--Dual clock -->
+    <div class="project dual_clock hidden">
+      <div class="player flex" id="clock1">
+        <p id="player1">
+          Player 1
+        </p>
+        <span id='p1Time'>MM:SS</span>
+      </div>
+      <div class="flex">
+        <hr>
+        <button class="hidden" onclick="dualStop()" id="⏸">||</button>
+        <button onclick="dualStart()" id="▶">▶️</button> <hr>
+        <button onclick="dualSetting()" id="⚙"> ⚙️</button> <hr>
+      </div>
+
+      <div class="player flex" id="clock2">
+        <p id="player2">
+          Player 2
+        </p>
+        <span id='p2Time'>MM:SS</span>
+      </div>
+    </div>
+    <div class="dialog flex hidden">
+      Fill the data. <br>
+      <form>
+        <label for="p1">Player 1: </label>
+        <input id="p1" required> <br>
+        <label for="p2">Player 2: </label>
+        <input id="p2" required> <br>
+        Select the time:
+        <div class="dualTimeSetter flex">
+          <input type="radio" class="input" id="dualTime1" value="5" name="DTS" required>
+          <label for="dualTime1">5 min</label>
+
+          <input type="radio" class="input" id="dualTime2" value="10" name="DTS">
+          <label for="dualTime2">10 min</label>
+
+          <input type="radio" id="dualTime3" class="input" value="15" name="DTS">
+          <label for="dualTime3">15 min</label>
+        </div>
+        <button type='submit' id="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</content>
+<!--NAV BAR -->
+<nav class="flex">
+  <div class="option active">
+    Clock
+  </div>
+  <div class="option">
+    Timer
+  </div>
+  <div class="option">
+    Stop Watch
+  </div>
+  <div class="option">
+    Dual Watch
+  </div>
+</nav>
+<script src="clock.js"></script>
+</body>
+</html>

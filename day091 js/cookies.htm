@@ -1,0 +1,28 @@
+<form>
+  <input name="id">
+  <input type="submit">
+</form>
+
+<script>
+  let setCookie = confirm("Will you want to set cookie?");
+  let form = document.querySelector('form');
+
+  form.addEventListener("submit", (e)=> {
+    e.preventDefault()
+    if (setCookie)
+      document.cookie = form['id'].name + "="+ form['id'].value;
+    console.log(document.cookie)
+  });
+
+  // two cookies are separated by semicolon
+  // If we directly set cookie then parts after ; will be ignored so to prevent them we should encode and decode them as per necessity
+  let key = encodeURIComponent(prompt("Key of cookie"));
+  let val = encodeURIComponent(prompt("Value of cookie"));
+  document.cookie = `${key} = ${val}`;
+</script>
+
+<!--
+1) name value pair after encodeURIComponent should not exceed 4kb
+2) depending on browser it will allow only 20+ cookies
+
+-->

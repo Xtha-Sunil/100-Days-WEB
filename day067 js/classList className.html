@@ -1,0 +1,27 @@
+<style>
+  .yellow {
+    background-color: yellow;
+  }
+  .green {
+    color: green;
+  }
+  .bold {
+    font-weight: bold;
+  }
+</style>
+<div class="bold">
+  I am div tag.
+</div>
+
+<script>
+  let div = document.getElementsByTagName("div")[0];
+
+  div.className += " yellow green"; //class name seperate by space
+
+  //takes only one parameter;
+  console.log(div.classList.contains("yellow")); //true
+  console.log(div.classList.contains("bold")); //true
+  div.classList.remove("yellow"); //removes the class
+  div.classList.add("green"); //adds the class
+  div.classList.toggle("bold"); //toggle the vlass
+</script>

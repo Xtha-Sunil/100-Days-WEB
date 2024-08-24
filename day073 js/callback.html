@@ -1,0 +1,39 @@
+<style>
+  .container {
+    background-color: red;
+    height: 200px;
+    width: 200px;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+</style>
+<body>
+  <div class="container"></div>
+
+  <script>
+    let div = document.querySelector('.container');
+    function loadPic(src, callback) {
+      img = document.createElement('img');
+      img.src = src;
+      div.appendChild(img);
+      img.onload = ()=> {
+        callback(null, src);
+      }
+      img.onerror = function () {
+        callback(new error("src got error"), src);
+      }
+    }
+    function loadAlert(error, link) {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      console.log("link to image is "+ link);
+    }
+
+    //run from here
+    loadPic('a.png', loadAlert)
+  </script>
+</body>

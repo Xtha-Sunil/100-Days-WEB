@@ -1,0 +1,33 @@
+<title> String Methods</title>
+<script>
+  const log = console.log.bind(document);
+
+  let name = "sun\"il"; //6 //escape sequence is count as 1
+  name = "suNiL"; // 5
+  log(name.length);
+
+  //these return value but dont change original variable
+  log(name.toUpperCase()); //sunil
+  log(name.toUpperCase()); //SUNIL
+  log(name); //suNiL
+
+  log(name.slice(1, 5)); //uNiL
+  log(name.slice(2)); //NiL
+
+  log(name.concat("        " + 'done')); //suNiL      done
+  log(name); // suNiL
+  name = "        sunil     ";
+  log(name.trim()); //sunil
+
+  log(name.replace("sunil", "koder").trim().indexOf("o")); //1
+
+  //The difference in slice and substring is that start and end values less than 0 are treated as 0 in substring().
+  log(name.substring(-7)); //no second so take all
+
+  log(name.substr(9, 5)); //take 5 char from 9th index
+
+  let num = 8;
+  let strNum = num.toString(); //type cast
+  log(strNum.padStart(3, "0")); //	008
+  log(strNum.padEnd(3, "0")); //	300
+</script>

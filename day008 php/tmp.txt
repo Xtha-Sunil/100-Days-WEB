@@ -1,0 +1,27 @@
+<p style="color:green">
+************** Inside opeaned file *******************
+</p>
+<b>
+syntax for opeaning file for reading
+
+$filename = "path/filename";
+$file = fopen($filename , "mode")
+
+if($file == false){
+    echo "cant open file";
+    exit();
+}
+
+$filesize = $filesize(filename);
+$filetext = fread($file, $filesize);
+
+fclose($file);
+
+echo "$filetext";
+
+
+//finished
+</b>
+<p style="color:green">
+************** Inside opeaned file *******************
+</p>

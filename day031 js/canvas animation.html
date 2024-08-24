@@ -1,0 +1,33 @@
+<style>
+	#canvas {
+		width: 100%;
+		border: 1px solid black;
+	}
+</style>
+<canvas id="canvas" width="600" height="400">
+	Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+	window.onload = function() {
+		var canvas = document.getElementById("canvas");
+		var context = canvas.getContext("2d");
+		var x = 0;
+		var y = 100;
+
+		function draw() {
+			context.clearRect(0, 0, 600, 400);
+
+			context.beginPath();
+			context.rect(x, y, 100, 100);
+			context.fillStyle = "red";
+			context.fill();
+
+			x += 10;
+			if (x >= 600) {
+				x = -100;
+			}
+		}
+		setInterval(draw, 50);
+	}
+</script>

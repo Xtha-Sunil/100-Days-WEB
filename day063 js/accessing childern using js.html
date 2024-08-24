@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Accessing Child Nodes</title>
+</head>
+<body>
+  <ul>
+    <li>
+      <b> Children of elements : </b> <br>
+      All direct and deeply nested nodes of an element is called Children of element.
+    </li>
+    <li>
+      <b>Child Nodes</b> <br>
+      Direct childen are Child Nodes. eg <u>head</u> and <u>body</u> are child nodes of <u>html</u> tag.
+    </li>
+    <li>
+      <b>Descendent Nodes</b> <br>
+      All the nested nodes, childern, their childern are  descendent nodes of element.
+    </li>
+  </ul> <br>
+
+  <script>
+    //Some methods of accessing child nodes
+    const log = console.log.bind(document);
+
+    log(document.body.firstChild); //TEXT; space as text node
+    log(document.body.lastChild); //Script
+    log(document.body.childNodes); //return node list of all child nodes
+    log(document.body.hasChildNodes()); // true
+
+
+    //we cant use array methods on node list. So we need to do
+    Array.from(document.body.childNodes).forEach((elem) => {
+      //log(elem);
+    });
+  </script>
+</body>
+</html>

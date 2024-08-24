@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<title>Pixel Art | Grid</title>
+<style>
+*{
+		box-sizing: border-box;
+		margin: 0;
+}
+body{
+		background-color: #152030;
+}
+.container{
+		display:flex;
+		flex-direction: column;
+}
+.grid{
+		display: grid;
+		grid-template-columns: repeat(25,20px);		
+}
+
+.days_box{
+		height: 20px;
+		border: 1px solid black;
+		background-color: white;
+}
+</style>
+</head>
+<body>
+		<div class="container">
+				<div class="grid"></div>
+				<div class="tools">
+						<button onclick="change('white')">0 commit</button>
+						<button onclick="change('lightgreen')">2 commit</button>
+						<button onclick="change('#59d576')">4 commit</button>
+						<button onclick="change('#4ebb67')">6 commit</button>
+						<button onclick="change('green')">7+ commit</button>
+				</div>
+		</div>
+
+		<script>
+				let grid = document.querySelector(".grid");
+				for (let i=1;i<=25*7; i++){
+					grid.innerHTML += `<div class="days_box" id="${i}"></div>`
+				}
+				function change(color){
+					grid.addEventListener("click", (e)=>{
+					e.target.style.backgroundColor=`${color}`
+				});
+				}
+		</script>
+</body>
+</html>

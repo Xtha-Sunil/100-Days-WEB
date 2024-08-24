@@ -1,0 +1,46 @@
+<script>
+  const log = console.log.bind(document);
+  let arr3 = [0, 1, 2, 8, 9, 10, 6, 7];
+  /*
+	splice(start,number,var,var,var);
+	start : index from where you want to delete
+	number: number of terms to delete
+	var : optional after deleting var wiill be added to the array
+*/
+  let deleted = arr3.splice(2, 3, 2, 3, 4, 5);
+  log(arr3); //0,1,2,3,4,5,6,7
+  log(deleted); // 2,8,9
+
+  // Array from
+  let name = "Sunil";
+  Array.from(name).forEach((x)=> {
+    log(x + " ");
+  })
+</script>
+
+<!-- Loops using js >-> <-<   -->
+<p id="out"></p>
+<script>
+  let out = document.querySelector("#out");
+  //looping in array
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+  //for loop
+  for (let i = 0; i < arr.length; i++)
+    out.innerHTML += arr[i] + ' '; //elements
+  out.innerHTML += "<br>";
+  //forEach loop
+  arr.forEach((elem)=> {
+    out.innerHTML += elem + " "; //elements of arr
+  });
+  out.innerHTML += "<br>";
+
+  // for of loop
+  for (x of arr)
+    out.innerHTML += x + ' ';
+  out.innerHTML += "<br>";
+
+  // for...in loop
+  for (x in arr)
+    out.innerHTML += arr[x] + " ";
+  out.innerHTML += "<br>";
+</script>
